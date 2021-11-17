@@ -23,7 +23,7 @@ public class VentanaPedidos extends JFrame {
 
     public VentanaPedidos(){
 
-        setSize(650,900); // largo y ancho del lienzo
+        setSize(640,720); //ancho y largodel lienzo
         setVisible(true); //es visible
         setTitle("Aplicación de pedidos."); //Nombre barra superior
         setContentPane(panelPrincipal); // declara el panel principal
