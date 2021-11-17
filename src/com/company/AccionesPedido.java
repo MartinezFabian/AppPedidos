@@ -11,7 +11,7 @@ public class AccionesPedido {
     ArrayList<Pedido> pedidoCompleto = new ArrayList<>();
 
     /**METODO PARA ANADIR EL TEXTO INGRESADO EN LA INTERFAZ AL ARCHIVO .txt**/
-    public void añadirPedido(String pedido,String cantidad, String nombreClientetxt) {
+    public void agregarPedido(String pedido, String cantidad, String nombreClientetxt) {
         Pedido objPedido = new Pedido(pedido,cantidad, nombreClientetxt); // Objeto para documentar en el .txt
 
         this.pedidoCompleto.add(objPedido);
@@ -43,7 +43,8 @@ public class AccionesPedido {
                 System.out.println("Error E/S:" + e);
             }
         }else{
-            JOptionPane.showMessageDialog(null, "Por favor complete todos los campos.");
+            JOptionPane.showMessageDialog(null, "Por favor complete todos los campos.",
+                    "Error en el ingreso de datos.", JOptionPane.ERROR_MESSAGE);
         }
     }
 

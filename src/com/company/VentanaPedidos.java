@@ -3,27 +3,25 @@ package com.company;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 
-public class InterfazPedidos extends JFrame {
+public class VentanaPedidos extends JFrame {
     private JPanel panelPrincipal;
     private JLabel bienvenido;
     private JLabel orden;
     private JTextField barraPedido;
-    private JButton añadir;
+    private JButton agregar;
     private JTextPane textoPedido;
     private JButton pedidoNuevo;
     private JLabel cantidad;
     private JSpinner candidadUsuario;
     private JTextField txtNombreCliente;
 
-    public InterfazPedidos(){
+    public VentanaPedidos(){
 
         setSize(650,900); // largo y ancho del lienzo
         setVisible(true); //es visible
@@ -38,8 +36,8 @@ public class InterfazPedidos extends JFrame {
         snm.setValue(1); // y un valor por defecto del spinner
         candidadUsuario.setModel(snm); // aplico los 3 cambios de arriba al spinner de contador
 
-        /**ESCUCHADOR DEL BOTON ANADIR**/
-        añadir.addActionListener(new ActionListener() {
+        /**ESCUCHADOR DEL BOTON AGREGAR**/
+        agregar.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,7 +49,7 @@ public class InterfazPedidos extends JFrame {
                 String cantidad = candidadUsuario.getValue().toString();// pido el valor del Spinner
 
 
-                pedidoInterfaz.añadirPedido(pedidotxt,cantidad, nombreClientetxt); // le asigno los datos pedidos al objeto de tipo AccionesPedido
+                pedidoInterfaz.agregarPedido(pedidotxt,cantidad, nombreClientetxt); // le asigno los datos pedidos al objeto de tipo AccionesPedido
 
                 try{
                     FileReader entrada = new FileReader("Pedido.txt"); //Flujo de datos
